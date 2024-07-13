@@ -1,0 +1,4 @@
+pymodbus==3.6.8
+PyQt6==6.7.0
+python_snap7==1.4.1
+pipreqs==0.5.0

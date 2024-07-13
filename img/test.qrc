@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>cooling_icon.svg</file>
+    <file>control_icon.svg</file>
+    <file>main_icon.svg</file>
+    <file>monitor_icon.svg</file>
+    <file>scheme_icon.svg</file>
+  </qresource>
+</RCC>

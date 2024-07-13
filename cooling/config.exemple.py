@@ -1,0 +1,9 @@
+ip_modbusTCP = "0.0.0.0"
+port = 777
+
+TIMEOUT = 0.0
+BAUDRATE = 9600
+BYTESIZE = 8
+PARITY = "N"
+STOPBITS = 0
+PORT = "COM1"
