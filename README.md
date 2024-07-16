@@ -1,1 +1,3 @@
 # INNA_
+
+Скопировать репозиторий к себе в проект - git clone https://github.com/MaximGribkov/INNA_.git
