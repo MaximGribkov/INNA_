@@ -5,16 +5,16 @@ from pymodbus.client import ModbusTcpClient
 
 # todo разобраться что за тип данных выдает овен при чтении с него
 # todo отправить запрос через термит, если не получится адекватный ответ, то проще будет читать данные с сименса
-def unpackInt16(data):  # извлекает из данных целое число со знаком
-    dataSize = len(data)
-    if dataSize < 1:
-        print("<1")
-    elif dataSize == 1:
-        data = b'\x00' + data  # дополняем до двух байтов
-    # value = ord(self.data[1]) + (ord(self.data[0])<<8 & 0xffff)
-    # value = struct.unpack('>h', data[0:2])[0]
-    # result = dict(value = value, time = -1, index = -1)
-    return struct.unpack('>H', data)
+# def unpackInt16(data):  # извлекает из данных целое число со знаком
+#     dataSize = len(data)
+#     if dataSize < 1:
+#         print("<1")
+#     elif dataSize == 1:
+#         data = b'\x00' + data  # дополняем до двух байтов
+#     # value = ord(self.data[1]) + (ord(self.data[0])<<8 & 0xffff)
+#     # value = struct.unpack('>h', data[0:2])[0]
+#     # result = dict(value = value, time = -1, index = -1)
+#     return struct.unpack('>H', data)
 
 
 # Параметры подключения
@@ -51,7 +51,7 @@ print(result.registers) # todo попробовать с битами и дур�
 
 
 #print(result)
-print(unpackInt16(a[0]))
+# print(unpackInt16(a[0]))
 
 # Закрытие соединения
 

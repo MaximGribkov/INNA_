@@ -1,6 +1,6 @@
 import time
 
-from config.config import MOXA_1, MOXA_2
+from confing import MOXA_1, MOXA_2
 from pymodbus.client import ModbusTcpClient
 from pymodbus.exceptions import ConnectionException
 import logging

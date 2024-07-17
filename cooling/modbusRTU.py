@@ -4,7 +4,7 @@ from pymodbus.client import ModbusSerialClient
 from pymodbus.exceptions import ModbusException
 from pymodbus.pdu import ExceptionResponse
 
-from config.config import (
+from confing import (
     TIMEOUT,
     BAUDRATE,
     BYTESIZE,

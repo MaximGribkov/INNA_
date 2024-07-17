@@ -1,11 +1,15 @@
 import struct
-from config.config import siemens_ip, rack_0, slot
+#from confing import siemens_ip, rack_0, slot
 
 import snap7
 from snap7.types import Areas
 
 plc = snap7.client.Client()  # создание клиента
 
+
+siemens_ip = "192.168.127.10"
+rack_0 = 0
+slot = 1
 
 #todo может быть реализивать постоянный пинг сименса
 
@@ -106,7 +110,40 @@ def read_wll_siemens_db13():
     else:
         return print("Соединение с PLC не удалось.")
 
-#print(read_wll_siemens_db13())
+
+"""
+бд под номером 14 
+адрес 338 0-4
+адрес 575 4-8
+адрес 464 8-12
+нужно как-то передать некоторые данные в овен 
+"""
+def write_338_do():
+    # b - в списке байтов говорит о том как запакуются данные для овена, будет формат bx00x00
+    if plc.get_connected():
+        value = 3000  # милисeкунды
+        data = plc.db_write(14, 0, bytearray(struct.pack('>b', value)))  # запись
+        return print(data, bytearray(struct.pack('>b', value)))
+    else:
+        return print("Соединение с PLC не удалось.")
+
+def write_464_do():
+    if plc.get_connected():
+        value = 3000  # милисeкунды
+        data = plc.db_write(14, 8, bytearray(struct.pack('>b', value)))  # запись
+        return print(data, bytearray(struct.pack('>b', value)))
+    else:
+        return print("Соединение с PLC не удалось.")
+
+def write_575_do():
+    if plc.get_connected():
+        value = 3000  # милисeкунды
+        data = plc.db_write(14, 4, bytearray(struct.pack('>b', value)))  # запись
+        return print(data, bytearray(struct.pack('>b', value)))
+    else:
+        return print("Соединение с PLC не удалось.")
+
+print(read_wll_siemens_db13())
 #print(write_time_siemens())
 #print(read_pbs_siemens())
 plc.disconnect()
